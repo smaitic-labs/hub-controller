@@ -1,0 +1,20 @@
+# permissions for end users to view connectionsets.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: connectionset-viewer-role
+rules:
+- apiGroups:
+  - hub.smaitic.com
+  resources:
+  - connectionsets
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - hub.smaitic.com
+  resources:
+  - connectionsets/status
+  verbs:
+  - get

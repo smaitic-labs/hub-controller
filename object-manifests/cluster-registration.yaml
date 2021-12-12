@@ -1,0 +1,7 @@
+apiVersion: hub.smaitic.com/v1alpha1
+kind: Cluster
+metadata:
+  name: cluster-1
+  namespace: customer-smaitic
+spec:
+  foo: cluster-1

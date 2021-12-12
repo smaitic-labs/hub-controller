@@ -3,4 +3,22 @@ layout:
 - go.kubebuilder.io/v3
 projectName: controller
 repo: github.com/smaitic-labs/hub-controller
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  domain: smaitic.com
+  group: hub
+  kind: Cluster
+  path: github.com/smaitic-labs/hub-controller/api/v1alpha1
+  version: v1alpha1
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: smaitic.com
+  group: hub
+  kind: ConnectionSet
+  path: github.com/smaitic-labs/hub-controller/api/v1alpha1
+  version: v1alpha1
 version: "3"

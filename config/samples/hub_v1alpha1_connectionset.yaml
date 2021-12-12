@@ -1,0 +1,6 @@
+apiVersion: hub.smaitic.com/v1alpha1
+kind: ConnectionSet
+metadata:
+  name: connectionset-sample
+spec:
+  # TODO(user): Add fields here

@@ -1,0 +1,8 @@
+apiVersion: hub.smaitic.com/v1alpha1
+kind: ConnectionSet
+metadata:
+  name: red
+  labels:
+    customer-name: customer-smaitic
+spec:
+  foo: Name

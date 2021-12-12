@@ -1,0 +1,95 @@
+
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.7.0
+  creationTimestamp: null
+  name: clusters.hub.smaitic.com
+spec:
+  group: hub.smaitic.com
+  names:
+    kind: Cluster
+    listKind: ClusterList
+    plural: clusters
+    singular: cluster
+  scope: Namespaced
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: Cluster is the Schema for the clusters API
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: ClusterSpec defines the desired state of Cluster
+            properties:
+              accessToken:
+                type: string
+              geoLocation:
+                properties:
+                  cloudProvider:
+                    type: string
+                  cloudRegion:
+                    type: string
+                  country:
+                    type: string
+                  latitude:
+                    type: string
+                  longitude:
+                    type: string
+                  postalCode:
+                    type: string
+                type: object
+              hubEndpoint:
+                description: Foo is an example field of Cluster. Edit cluster_types.go
+                  to remove/update
+                type: string
+              monitoring:
+                properties:
+                  kubernetesDashboard:
+                    properties:
+                      accessToken:
+                        type: string
+                      enabled:
+                        type: boolean
+                      ingressPrefix:
+                        type: string
+                    type: object
+                type: object
+              telemetry:
+                properties:
+                  enabled:
+                    type: boolean
+                  endpoint:
+                    type: string
+                  telemetryProvider:
+                    type: string
+                type: object
+            type: object
+          status:
+            description: ClusterStatus defines the observed state of Cluster
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []
