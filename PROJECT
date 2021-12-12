@@ -1,0 +1,6 @@
+domain: smaitic.com
+layout:
+- go.kubebuilder.io/v3
+projectName: controller
+repo: github.com/smaitic-labs/hub-controller
+version: "3"
